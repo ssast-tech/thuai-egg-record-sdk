@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+      "target": "ES2020",
+      "module": "ES2020",
+      "moduleResolution": "node",
+      "lib": [
+          "esnext",
+          "esnext.asynciterable",
+          "dom"
+      ],
+      "skipLibCheck": true,
+      "noImplicitAny": true,
+      "noImplicitThis": true,
+      "noImplicitReturns": true,
+      "strict": true,
+      "declaration": true,
+      "declarationMap": true,
+      "declarationDir": "dist/types",
+      "outDir": "dist"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": ["node_modules", "dist"]
+}

@@ -1,0 +1,15 @@
+{
+  "dependencies": {
+    "@types/node": "^14.14.22",
+    "renamer": "^2.0.1",
+    "typescript": "^4.1.3"
+  },
+  "private": "true",
+  "name": "thuai-js-record-sdk",
+  "module": "dist/record_io.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dist": "node dist/index.js"
+  }
+}
