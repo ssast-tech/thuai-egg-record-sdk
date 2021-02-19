@@ -13,7 +13,7 @@ int main(void) {
   for (int i = 0; i < EGG_COUNT; i++) {
     unsigned char score = rand() * 10.0f / RAND_MAX + 10.0f;
     eggs[i] = new Egg(i, score);
-    Position pos = Position{rand() * 25.0f / RAND_MAX, rand() * 25.0f / RAND_MAX};
+    Vec2D pos = Vec2D{rand() * 25.0f / RAND_MAX, rand() * 25.0f / RAND_MAX};
     eggs[i]->set_position(pos);
     rec.init_egg_score(*(eggs[i]));
     cout << "Egg #" << i << ": @" << pos.x << ',' << pos.y << "; score: " << (int)score << endl;
@@ -23,7 +23,7 @@ int main(void) {
     rec.add_frame();
     cout << "Frame #" << t << endl;
     for (int i = 0; i < PLAYER_COUNT; i++) {
-      Position pos = Position{rand() * 25.0f / RAND_MAX, rand() * 25.0f / RAND_MAX};
+      Vec2D pos = Vec2D{rand() * 25.0f / RAND_MAX, rand() * 25.0f / RAND_MAX};
       float endurance = rand() * 5.0f / RAND_MAX;
       int egg_id = EGG_COUNT - i - 1;
       cout << "Player #" << i << ": @" << pos.x << ',' << pos.y << "; ";

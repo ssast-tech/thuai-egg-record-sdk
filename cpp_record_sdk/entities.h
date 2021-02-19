@@ -5,7 +5,7 @@ namespace thuai {
 
   const int EGG_COUNT = 15, PLAYER_COUNT = 12;
 
-  struct Position {
+  struct Vec2D {
     double x, y;
   };
 
@@ -17,17 +17,24 @@ namespace thuai {
     STOPPED, SLIPPED, WALKING, RUNNING
   };
 
-  class Player {
+  class Entity {
+    Vec2D m_pos, m_velocity;
+  public:
+    Entity();
+    void set_position(Vec2D new_pos);
+    Vec2D position(void) const;
+    void set_velocity(Vec2D new_pos);
+    Vec2D velocity(void) const;
+  };
+
+  class Player: public Entity {
     int m_id, m_egg_id;
-    Position m_pos;
     Team m_team;
     float m_endurance;
     PlayerStatus m_status;
     
   public:
     Player(int id);
-    void set_position(Position new_pos);
-    Position position(void) const;
     void set_endurance(float new_endurance);
     void set_status(PlayerStatus);
     float endurance(void) const;
@@ -38,16 +45,13 @@ namespace thuai {
     Team team(void) const;
   };
 
-  class Egg {
+  class Egg: public Entity {
     int m_id, m_score;
-    Position m_pos;
 
   public:
     Egg(int id, int score);
     int id(void) const;
     int score(void) const;
-    void set_position(Position new_pos);
-    Position position(void) const;
   };
 }
 #endif

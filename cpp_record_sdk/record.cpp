@@ -26,13 +26,13 @@ namespace thuai {
   }
 
   void Record::set_egg_in_frame(const Egg &egg) {
-    Position pos = egg.position();
+    Vec2D pos = egg.position();
     m_frames.back().egg_x[egg.id()] = pos.x;
     m_frames.back().egg_y[egg.id()] = pos.y;
   }
 
   void Record::set_player_in_frame(const Player &player) {
-    Position pos = player.position();
+    Vec2D pos = player.position();
     m_frames.back().player_x[player.id()] = pos.x;
     m_frames.back().player_y[player.id()] = pos.y;
     m_frames.back().egg_in_hand[player.id()] = player.egg();

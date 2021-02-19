@@ -2,6 +2,24 @@
 #include "entities.h"
 
 namespace thuai {
+  Entity::Entity(): m_pos({.0, .0}), m_velocity({.0, .0}) {}
+
+  void Entity::set_position(Vec2D new_pos) {
+    this->m_pos = new_pos;
+  }
+
+  Vec2D Entity::position(void) const {
+    return this->m_pos;
+  }
+
+  void Entity::set_velocity(Vec2D new_velocity) {
+    this->m_velocity = new_velocity;
+  }
+
+  Vec2D Entity::velocity(void) const {
+    return this->m_velocity;
+  }
+
   Player::Player(int id) {
     assert(0 <= id && id < PLAYER_COUNT);
     m_id = id; m_egg_id = -1;
@@ -21,14 +39,6 @@ namespace thuai {
 
   PlayerStatus Player::status(void) const {
     return m_status;
-  }
-
-  void Player::set_position(Position new_pos) {
-    this->m_pos = new_pos;
-  }
-
-  Position Player::position(void) const {
-    return this->m_pos;
   }
 
   void Player::set_endurance(float new_endurance) {
@@ -64,11 +74,5 @@ namespace thuai {
   }
   int Egg::score(void) const {
     return m_score;
-  }
-  void Egg::set_position(Position new_pos) {
-    m_pos = new_pos;
-  }
-  Position Egg::position(void) const {
-    return m_pos;
   }
 }
