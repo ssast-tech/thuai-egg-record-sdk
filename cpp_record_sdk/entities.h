@@ -6,7 +6,7 @@ namespace thuai {
   const int EGG_COUNT = 15, PLAYER_COUNT = 12;
 
   struct Position {
-    float x, y;
+    double x, y;
   };
 
   enum Team {
