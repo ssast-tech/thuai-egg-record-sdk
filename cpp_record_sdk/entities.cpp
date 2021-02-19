@@ -15,6 +15,14 @@ namespace thuai {
     }
   }
 
+  void Player::set_status(PlayerStatus new_status) {
+    m_status = new_status;
+  }
+
+  PlayerStatus Player::status(void) const {
+    return m_status;
+  }
+
   void Player::set_position(Position new_pos) {
     this->m_pos = new_pos;
   }

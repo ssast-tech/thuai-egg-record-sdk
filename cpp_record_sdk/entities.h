@@ -13,21 +13,28 @@ namespace thuai {
     RED, YELLOW, BLUE
   };
 
+  enum PlayerStatus {
+    STOPPED, SLIPPED, WALKING, RUNNING
+  };
+
   class Player {
     int m_id, m_egg_id;
     Position m_pos;
     Team m_team;
     float m_endurance;
+    PlayerStatus m_status;
     
   public:
     Player(int id);
     void set_position(Position new_pos);
     Position position(void) const;
     void set_endurance(float new_endurance);
+    void set_status(PlayerStatus);
     float endurance(void) const;
     void set_egg(int new_egg_id);
     int egg(void) const;
     int id(void) const;
+    PlayerStatus status(void) const;
     Team team(void) const;
   };
 
