@@ -1,7 +1,18 @@
 #include <cassert>
+#include <cmath>
 #include "entities.h"
 
 namespace thuai {
+
+  double Vec2D::length() const { return sqrt(x*x + y*y); }
+  
+  Vec2D Vec2D::normalized() const {
+    Vec2D ret = *this;
+    double len = this->length();
+    ret.x /= len; ret.y /= len;
+    return ret;
+  }
+
   Entity::Entity(): m_pos({.0, .0}), m_velocity({.0, .0}) {}
 
   void Entity::set_position(Vec2D new_pos) {

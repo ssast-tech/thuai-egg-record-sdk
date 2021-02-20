@@ -7,6 +7,8 @@ namespace thuai {
 
   struct Vec2D {
     double x, y;
+    double length() const;
+    Vec2D normalized() const;
   };
 
   enum Team {

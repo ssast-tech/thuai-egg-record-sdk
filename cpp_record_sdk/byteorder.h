@@ -17,7 +17,6 @@
   #include <sys/endian.h>
 #elif defined(__WINDOWS__)
   #include <winsock2.h>
-  #include <sys/param.h>
   #define __BYTE_ORDER BYTE_ORDER
   #define __BIG_ENDIAN BIG_ENDIAN
   #define __LITTLE_ENDIAN LITTLE_ENDIAN
