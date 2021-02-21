@@ -35,6 +35,14 @@ namespace thuai {
     return this->m_velocity;
   }
 
+  void Entity::set_facing(Vec2D new_facing) {
+    this->m_facing = new_facing;
+  }
+
+  Vec2D Entity::facing(void) const {
+    return this->m_facing;
+  }
+
   Player::Player(int id) {
     assert(0 <= id && id < PLAYER_COUNT);
     m_id = id; m_egg_id = -1;

@@ -20,14 +20,16 @@ namespace thuai {
   };
 
   class Entity {
-    Vec2D m_pos, m_velocity;
+    Vec2D m_pos, m_velocity, m_facing;
   public:
     Entity();
     void set_position(Vec2D new_pos);
     Vec2D position(void) const;
     void set_velocity(Vec2D new_pos);
     Vec2D velocity(void) const;
-  };
+    void set_facing(Vec2D new_pos);
+    Vec2D facing(void) const;
+ };
 
   class Player: public Entity {
     int m_id, m_egg_id;
