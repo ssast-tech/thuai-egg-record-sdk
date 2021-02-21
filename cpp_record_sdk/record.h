@@ -21,7 +21,7 @@ namespace thuai {
   */
   class Record {
     uint16_t m_fps;
-    uint32_t m_r_score, m_y_score, m_b_score;
+    uint32_t m_r_score = 0, m_y_score = 0, m_b_score = 0;
     time_t m_timestamp;
     uint8_t m_egg_scores[15];
     std::vector<RecordFileFrame> m_frames;

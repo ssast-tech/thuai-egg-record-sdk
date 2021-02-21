@@ -5,7 +5,7 @@
 namespace thuai {
   Record::Record(uint16_t fps): m_fps(fps) {
     m_r_score = m_y_score = m_b_score = 0;
-    m_timestamp = time(NULL); // should be initiated at game start
+    m_timestamp = time(nullptr); // should be initiated at game start
   }
 
   void Record::set_score(uint32_t r_score, uint32_t y_score, uint32_t b_score) {
