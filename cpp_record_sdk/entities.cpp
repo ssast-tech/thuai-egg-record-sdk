@@ -10,7 +10,7 @@ namespace thuai {
     Vec2D ret = *this;
     double len = this->length();
     if (len < 1e-5) {
-      return ret;
+      return Vec2D{.0, .0};
     } else {
       ret.x /= len; ret.y /= len;
       return ret;
