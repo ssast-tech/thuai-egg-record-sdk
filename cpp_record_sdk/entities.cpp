@@ -36,7 +36,7 @@ namespace thuai {
   }
 
   void Entity::set_facing(Vec2D new_facing) {
-    this->m_facing = new_facing;
+    this->m_facing = new_facing.normalized();
   }
 
   Vec2D Entity::facing(void) const {
